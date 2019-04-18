@@ -1,0 +1,26 @@
+<div align="center">
+  <h1>Login Form</h1>
+  <form [formGroup]="loginForm">
+    <div>
+      <mat-form-field>
+        <input
+          matInput
+          formControlName="email"
+          [placeholder]="'Email'"
+          required>
+        <mat-error> {{getErrorMessage('email')}}</mat-error>
+      </mat-form-field>
+
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput
+               [placeholder]="'Password'"
+               [type]="hide ? 'password' : 'text'"
+               formControlName="password"
+               required>
+        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </mat-form-field>
+    </div>
+  </form>
+</div>
